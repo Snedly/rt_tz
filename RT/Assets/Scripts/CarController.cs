@@ -15,6 +15,9 @@ public class CarController : MonoBehaviour
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -34,6 +37,5 @@ public class CarController : MonoBehaviour
     private void Move()
     {
         rigidBody.AddForce(-transform.forward * speed, ForceMode.Impulse);
-        Debug.Log("Lвижение прямо");
     }
 }
