@@ -3,10 +3,14 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [Header("Main Settings")]
-    [SerializeField, Range(0.1f, 0.2f)] private float speed;
+    [SerializeField] private float speed = 0.05f;
+
+    [Header("Component Link's")]
+    [Space]
+    [SerializeField] private TrafficLightController trafficController;
 
     private Rigidbody rigidBody;
-    private bool canMove = false;
+    private bool drive = false;
 
     private void Awake()
     {
@@ -15,18 +19,21 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W)) canMove = true;
-        else if (Input.GetKey(KeyCode.S)) canMove = false;
+        if (Input.GetKeyDown(KeyCode.W)) drive = true;
+        else if (Input.GetKeyDown(KeyCode.S)) drive = false;
 
-        if (canMove)
+        if (trafficController.canMove)
         {
-            Move();
+            if(drive)
+            {
+                Move();
+            }
         }
     }
 
     private void Move()
     {
         rigidBody.AddForce(-transform.forward * speed, ForceMode.Impulse);
-        Debug.Log("движение прямо");
+        Debug.Log("Lвижение прямо");
     }
 }

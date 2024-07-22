@@ -154,7 +154,7 @@ Transform:
   m_Children:
   - {fileID: 543450653495857410}
   - {fileID: 543450652321902911}
-  - {fileID: 543450653017577120}
+  - {fileID: 705507995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
@@ -249,7 +249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 580214453}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -337,7 +337,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.068810955, y: 0.90418696, z: -0.15943255, w: -0.39024636}
-  m_LocalPosition: {x: 2, y: 3, z: 12.7}
+  m_LocalPosition: {x: 1.5, y: 3, z: 15.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -414,16 +414,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148762496026}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.5, y: 0, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4389415817820543951}
   - {fileID: 807607504544863595}
-  - {fileID: 3347258600858360373}
   - {fileID: 6469494297586258059}
-  m_Father: {fileID: 580214453}
+  - {fileID: 4389415817820543951}
+  - {fileID: 3347258600858360373}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653495857410
 Transform:
@@ -449,7 +449,7 @@ Transform:
   m_GameObject: {fileID: 919132149170974689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 2, z: 17.5}
+  m_LocalPosition: {x: -2.5, y: 2, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 807607504544863595}
   - component: {fileID: 2164480636544108905}
   - component: {fileID: 7115992646982884500}
+  - component: {fileID: 7115992646982884501}
   m_Layer: 0
   m_Name: red
   m_TagString: Untagged
@@ -484,7 +485,7 @@ Transform:
   m_GameObject: {fileID: 742571696836421916}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -526,13 +527,32 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653017577120}
+  - component: {fileID: 919132148762496027}
   m_Layer: 0
-  m_Name: Traffic Light
+  m_Name: Traffic Light Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148762496027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148762496026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3749c671e47f85140ad1783932e0d224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLight: {fileID: 0}
+  redLight: {fileID: 7115992646982884501}
+  yellowLight: {fileID: 6469494297586258060}
+  greenLight: {fileID: 7066563620917113474}
+  offLightMaterial: {fileID: 2100000, guid: 5f2b819da99b9eb4f997045352d0be8f, type: 2}
+  canMove: 0
 --- !u!1 &919132149170974689
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +731,7 @@ Transform:
   m_GameObject: {fileID: 8021485652529927089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1013,6 +1033,7 @@ GameObject:
   - component: {fileID: 6469494297586258059}
   - component: {fileID: 863095616133190242}
   - component: {fileID: 6038550814645398270}
+  - component: {fileID: 6469494297586258060}
   m_Layer: 0
   m_Name: yellow
   m_TagString: Untagged
@@ -1096,8 +1117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc3227a8e9a9144ca9dcf301ecc32a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  canMove: 0
+  speed: 0.05
+  trafficController: {fileID: 919132148762496027}
 --- !u!23 &6038550814645398270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1118,7 +1139,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 37efe506742afa1438c3f6b6c7e3f612, type: 2}
+  - {fileID: 2100000, guid: 5f2b819da99b9eb4f997045352d0be8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1160,7 +1181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6207c68b70715844ad4afc783748499, type: 2}
+  - {fileID: 2100000, guid: 5f2b819da99b9eb4f997045352d0be8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1191,12 +1212,28 @@ Transform:
   m_GameObject: {fileID: 5361281312992182242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450653017577120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6469494297586258060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361281312992182242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ba8391f183ccf44a7b36ed8a5e8480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 2
+  lightMaterial: {fileID: 2100000, guid: 37efe506742afa1438c3f6b6c7e3f612, type: 2}
+  meshRenderer: {fileID: 6038550814645398270}
+  lightState: 0
 --- !u!4 &6471541934529300572
 Transform:
   m_ObjectHideFlags: 0
@@ -1223,6 +1260,7 @@ GameObject:
   - component: {fileID: 4389415817820543951}
   - component: {fileID: 5012415784268679901}
   - component: {fileID: 6314098318029750332}
+  - component: {fileID: 7066563620917113474}
   m_Layer: 0
   m_Name: green
   m_TagString: Untagged
@@ -1230,6 +1268,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7066563620917113474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066563620917113473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ba8391f183ccf44a7b36ed8a5e8480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  lightMaterial: {fileID: 2100000, guid: c6207c68b70715844ad4afc783748499, type: 2}
+  meshRenderer: {fileID: 6314098318029750332}
+  lightState: 0
 --- !u!23 &7115992646982884500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1250,7 +1304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 412d96967d6938347b7fd224aeca9da8, type: 2}
+  - {fileID: 2100000, guid: 5f2b819da99b9eb4f997045352d0be8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1272,6 +1326,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7115992646982884501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742571696836421916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ba8391f183ccf44a7b36ed8a5e8480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  lightMaterial: {fileID: 2100000, guid: 412d96967d6938347b7fd224aeca9da8, type: 2}
+  meshRenderer: {fileID: 7115992646982884500}
+  lightState: 0
 --- !u!1 &7722041689076835662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1370,7 @@ GameObject:
   - component: {fileID: 2533082341315580742}
   - component: {fileID: 3932054239118232842}
   m_Layer: 0
-  m_Name: traffic light
+  m_Name: traffic light main model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,7 +1396,7 @@ GameObject:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 705507995}
   - {fileID: 963194228}
   - {fileID: 580214453}
   - {fileID: 543450653692425563}
+  - {fileID: 543450653017577120}
