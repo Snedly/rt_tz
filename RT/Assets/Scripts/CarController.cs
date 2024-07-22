@@ -10,11 +10,13 @@ public class CarController : MonoBehaviour
     [SerializeField] private TrafficLightController trafficController;
 
     private Rigidbody rigidBody;
+    private Animator animator;
     private bool drive = false;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -37,5 +39,6 @@ public class CarController : MonoBehaviour
     private void Move()
     {
         rigidBody.AddForce(-transform.forward * speed, ForceMode.Impulse);
+        animator.SetBool("Moving", true);
     }
 }

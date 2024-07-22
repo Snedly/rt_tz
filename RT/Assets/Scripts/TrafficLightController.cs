@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrafficLightController : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class TrafficLightController : MonoBehaviour
     [Header("Material Link's")]
     [Space]
     [SerializeField] private Material offLightMaterial = null;
+
+    [Header("Component Link's")]
+    [Space]
+    [SerializeField] private Text textContainer = null;
 
     public bool canMove = false;
 
@@ -41,6 +46,7 @@ public class TrafficLightController : MonoBehaviour
         redLight.meshRenderer.material = offLightMaterial;
         yellowLight.meshRenderer.material = yellowLight.lightMaterial;
         currentLight = yellowLight;
+        textContainer.text = "Смена сигнала!";
 
         yield return new WaitForSeconds(yellowLight.time);
 
@@ -48,6 +54,7 @@ public class TrafficLightController : MonoBehaviour
         yellowLight.meshRenderer.material = offLightMaterial;
         greenLight.meshRenderer.material = greenLight.lightMaterial;
         currentLight = greenLight;
+        textContainer.text = null;
 
         yield return new WaitForSeconds(greenLight.time);
 
