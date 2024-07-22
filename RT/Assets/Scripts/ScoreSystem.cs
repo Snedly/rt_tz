@@ -7,7 +7,7 @@ public class ScoreSystem : MonoBehaviour
     [Space]
     public int scoreAmount = 0;
 
-    [Space(20)]
+    [Space]
 
     [Header("Components")]
     [Space]

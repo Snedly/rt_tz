@@ -4,11 +4,7 @@ using UnityEngine.UI;
 
 public class TrafficLightController : MonoBehaviour
 {
-    [Header("MainSettings")]
-    [Space]
-    public TrafficLight currentLight = null;
-
-    [Space(30)]
+    [HideInInspector] public TrafficLight currentLight = null;
 
     [Header("Light Component Link's")]
     [Space]
@@ -24,7 +20,7 @@ public class TrafficLightController : MonoBehaviour
     [Space]
     [SerializeField] private Text textContainer = null;
 
-    public bool canMove = false;
+    [HideInInspector] public bool canMove = false;
 
     private void Start()
     {

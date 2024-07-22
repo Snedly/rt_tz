@@ -3,7 +3,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [Header("Main Settings")]
-    [SerializeField] private float speed = 0.05f;
+    [SerializeField, Range(0.05f, 0.1f)] private float speed = 0.05f;
 
     [Header("Component Link's")]
     [Space]
@@ -33,6 +33,14 @@ public class CarController : MonoBehaviour
             {
                 Move();
             }
+            else
+            {
+                animator.SetBool("Moving", false);
+            }
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
         }
     }
 
