@@ -6,15 +6,15 @@ public class TrafficLightController : MonoBehaviour
 {
     [Header("MainSettings")]
     [Space]
-    [SerializeField] private TrafficLight currentLight = null;
+    public TrafficLight currentLight = null;
 
     [Space(30)]
 
     [Header("Light Component Link's")]
     [Space]
-    [SerializeField] private TrafficLight redLight = null;
-    [SerializeField] private TrafficLight yellowLight = null;
-    [SerializeField] private TrafficLight greenLight = null;
+    public TrafficLight redLight = null;
+    public TrafficLight yellowLight = null;
+    public TrafficLight greenLight = null;
 
     [Header("Material Link's")]
     [Space]

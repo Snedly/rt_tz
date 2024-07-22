@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\TrafficLight.cs" />
     <Compile Include="Assets\Scripts\CarController.cs" />
+    <Compile Include="Assets\Scripts\ScoreSystem.cs" />
     <Compile Include="Assets\Scripts\TrafficLightController.cs" />
+    <Compile Include="Assets\Scripts\Crossroad.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
